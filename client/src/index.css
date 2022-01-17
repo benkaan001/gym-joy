@@ -1,16 +1,28 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #232f3e;
+  --secondary: #f3a847;
+  --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+
+  /* CSS HSL */
+  --charcoal: hsla(197, 37%, 24%, 1);
+  --persian-green: rgb(0, 164, 148);
+  --orange-yellow-crayola: hsla(43, 74%, 66%, 1);
+  --orange-yellow-crayola-lite: rgb(255, 240, 203);
+  --sandy-brown: hsla(27, 87%, 67%, 1);
+  --sandy-brown-lite: rgb(253, 229, 209);
+  --burnt-sienna: hsla(12, 76%, 61%, 1);
+  --burnt-sienna-lite: rgb(247, 247, 247);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0%;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
@@ -91,7 +103,7 @@ button {
   font-size: 1rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -100,19 +112,19 @@ button {
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button[disabled] {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 img {
   max-width: 100%;
 }
 
-span[role="img"] {
+span[role='img'] {
   cursor: default;
 }
 
@@ -131,7 +143,7 @@ input {
 
 input:focus {
   border: 1px solid var(--secondary);
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .container {

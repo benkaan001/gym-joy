@@ -1,6 +1,7 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
+// import Button from '@mui/material/Button';
 
 function Nav() {
   function showNavigation() {
@@ -40,6 +41,7 @@ function Nav() {
           </span>
           -Gym-Joy
         </Link>
+        {/* <Button variant='contained'>Contained</Button> */}
       </h1>
 
       <nav>{showNavigation()}</nav>
