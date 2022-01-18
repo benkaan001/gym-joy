@@ -107,7 +107,7 @@ const Footer = () => {
       </Left>
       <Center>
         <Title>LINKS</Title>
-        <List>
+        <List onClick={() => window.location.replace('/login')}>
           <ListItem>SignIn</ListItem>
           <ListItem>Register</ListItem>
           <ListItem>COVID-19 FAQ</ListItem>

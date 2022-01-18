@@ -14,6 +14,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
+// import Login from './pages/Login';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
@@ -22,6 +23,10 @@ import Success from './pages/Success';
 import Announcement from './components/Announcement';
 import Footer from './components/Footer';
 import Slider from './components/Slider';
+
+import Categories from './components/Categories';
+import Newsletter from './components/Newsletter';
+import Cart from './components/Cart';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -49,17 +54,23 @@ function App() {
         <div>
           <StoreProvider>
             <Announcement />
-            <Nav />
+            <Nav>
+              <Cart />
+            </Nav>
             <Slider />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={Signup} />
-              <Route exact path='/orderHistory' component={OrderHistory} />
-              <Route exact path='/products/:id' component={Detail} />
-              <Route exact path='/success' component={Success} />
-              <Route component={NoMatch} />
-            </Switch>
+            <Categories />
+            <div className='body'>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/orderHistory' component={OrderHistory} />
+                <Route exact path='/products/:id' component={Detail} />
+                <Route exact path='/success' component={Success} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+            <Newsletter />
             <Footer />
           </StoreProvider>
         </div>

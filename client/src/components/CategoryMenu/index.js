@@ -9,6 +9,54 @@ import {
 } from '../../utils/actions';
 
 import { idbPromise } from '../../utils/helpers';
+import styled from 'styled-components';
+import { mobile, tablet } from '../../mobileScreen';
+
+const Container = styled.div`
+  flex: 1;
+  margin: 3px;
+  height: 50vh;
+  position: relative;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1623199648374-a4ff4e14e719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=1200&q=100');
+`;
+const Info = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const Button = styled.button`
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: white;
+  word-spacing: 3px;
+  color: black;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ${mobile({ height: '35vh' })};
+  ${tablet({ height: '50vh' })};
+`;
+
+const Title = styled.h1`
+  color: white;
+  margin-bottom: 20px;
+  background-color: var(--charcoal);
+`;
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -49,19 +97,24 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
-        <button
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
-        </button>
-      ))}
-    </div>
+    <Container>
+      <Info>
+        <Title id='categories'>CATEGORIES</Title>
+        <div>
+          {/* <h2>Choose a Category:</h2> */}
+          {categories.map((item) => (
+            <Button
+              key={item._id}
+              onClick={() => {
+                handleClick(item._id);
+              }}
+            >
+              {item.name}
+            </Button>
+          ))}
+        </div>
+      </Info>
+    </Container>
   );
 }
 

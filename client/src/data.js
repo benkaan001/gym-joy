@@ -21,3 +21,24 @@ export const sliderItems = [
     bg: 'rgb(255, 240, 203)',
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    img: 'https://images.unsplash.com/photo-1539794830467-1f1755804d13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODl8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+    title: 'Stretch.Breathe.Repeat!',
+    category: 'womens',
+  },
+  {
+    id: 2,
+    img: 'https://images.unsplash.com/photo-1518214598173-1666bc921d66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzJ8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+    title: 'Flow through goals!',
+    category: 'mens',
+  },
+  {
+    id: 3,
+    img: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+    title: 'Just motivation.',
+    category: 'unisex',
+  },
+];

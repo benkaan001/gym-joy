@@ -111,7 +111,9 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description> {item.desc}</Description>
-              <Button>VIEW SELECTION</Button>
+              <Button onClick={() => window.location.replace('/#categories')}>
+                VIEW SELECTION
+              </Button>
             </InfoContainer>
           </Slide>
         ))}

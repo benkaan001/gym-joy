@@ -21,26 +21,24 @@ function Nav() {
     } else {
       return (
         <ul className='flex-row'>
-          <li className='mx-1'>
+          <span className='mx-1 my-2 px-2'>
             <Link to='/signup'>Signup</Link>
-          </li>
-          <li className='mx-1'>
+            {/* <Link to='/signup'>
+              <Button>Signup</Button>
+            </Link> */}
+          </span>
+          <span className='mx-1 my-2 px-2'>
             <Link to='/login'>Login</Link>
-          </li>
+          </span>
         </ul>
       );
     }
   }
 
   return (
-    <header className='flex-row px-1'>
+    <header className='flex-row px-1 navbar'>
       <h1>
-        <Link to='/'>
-          <span role='img' aria-label='shopping bag'>
-            💪🏼
-          </span>
-          -Gym-Joy
-        </Link>
+        <Link to='/'>H-A-L-O</Link>
         {/* <Button variant='contained'>Contained</Button> */}
       </h1>
 
