@@ -13,17 +13,18 @@ import styled from 'styled-components';
 import { mobile, tablet } from '../../mobileScreen';
 
 const Container = styled.div`
-  flex: 1;
   margin: 3px;
-  height: 50vh;
+  height: 30vh;
   position: relative;
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
     url('https://images.unsplash.com/photo-1623199648374-a4ff4e14e719?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTd8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=1200&q=100');
+  ${mobile({ height: '15vh' })};
 `;
 const Info = styled.div`
+  flex: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -34,6 +35,25 @@ const Info = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+const CategoryItemWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  ${mobile({})};
+  ${tablet({})};
+`;
+
+const Title = styled.h2`
+  color: white;
+  padding: 10px;
+  font-weight: 400;
+  word-spacing: 10px;
+  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  background-color: var(--charcoal);
+`;
 const Button = styled.button`
   border: none;
   padding: 10px;
@@ -42,20 +62,9 @@ const Button = styled.button`
   background-color: white;
   word-spacing: 3px;
   color: black;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  ${mobile({ height: '35vh' })};
-  ${tablet({ height: '50vh' })};
-`;
-
-const Title = styled.h1`
-  color: white;
-  margin-bottom: 20px;
-  background-color: var(--charcoal);
+  &:hover {
+    background-color: var(--persian-green);
+  }
 `;
 
 function CategoryMenu() {
@@ -100,7 +109,7 @@ function CategoryMenu() {
     <Container>
       <Info>
         <Title id='categories'>CATEGORIES</Title>
-        <div>
+        <CategoryItemWrapper>
           {/* <h2>Choose a Category:</h2> */}
           {categories.map((item) => (
             <Button
@@ -112,7 +121,7 @@ function CategoryMenu() {
               {item.name}
             </Button>
           ))}
-        </div>
+        </CategoryItemWrapper>
       </Info>
     </Container>
   );

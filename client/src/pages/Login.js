@@ -19,6 +19,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${mobile({ height: '60vh' })}
 `;
 
 const Wrapper = styled.div`
@@ -39,6 +40,8 @@ const Title = styled.h1`
   letter-spacing: 2px;
   ${mobile({ textAlign: 'center' })}
 `;
+
+const FormWrapper = styled.div``;
 
 const Form = styled.form`
   display: flex;
@@ -99,32 +102,33 @@ function Login(props) {
   return (
     <Container>
       <Wrapper>
-        <Title> LOGIN TO YOUR ACCOUNT</Title>
-
-        <Form onSubmit={handleFormSubmit}>
-          <Input
-            placeholder='email@gmail.com'
-            name='email'
-            type='email'
-            id='email'
-            onChange={handleChange}
-          />
-          <Input
-            placeholder='******'
-            name='password'
-            type='password'
-            id='pwd'
-            onChange={handleChange}
-          />
-          {error ? (
-            <div>
-              <p className='error-text'>
-                The provided credentials are incorrect
-              </p>
-            </div>
-          ) : null}
-          <Button>SIGN IN</Button>
-        </Form>
+        <Title id='login'> LOGIN TO YOUR ACCOUNT</Title>
+        <FormWrapper>
+          <Form onSubmit={handleFormSubmit}>
+            <Input
+              placeholder='email@gmail.com'
+              name='email'
+              type='email'
+              id='email'
+              onChange={handleChange}
+            />
+            <Input
+              placeholder='password'
+              name='password'
+              type='password'
+              id='pwd'
+              onChange={handleChange}
+            />
+            {error ? (
+              <div>
+                <p className='error-text'>
+                  The provided credentials are incorrect
+                </p>
+              </div>
+            ) : null}
+            <Button>SIGN IN</Button>
+          </Form>
+        </FormWrapper>
         <Link to='/signup'>
           <Link1> CREATE A HALO ACCOUNT</Link1>
         </Link>

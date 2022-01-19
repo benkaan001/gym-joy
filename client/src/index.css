@@ -24,20 +24,20 @@
   margin: 0%;
   font-family: 'Roboto', sans-serif;
 }
-
+/* 
 html,
 body {
   min-height: 100%;
-}
+} */
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
-}
+} */
 
 h1,
 h2,
@@ -74,30 +74,30 @@ h6 {
   font-size: 1rem;
 }
 
-p {
+/* p {
   font-size: 1.1rem;
   margin-top: 0;
-}
+} */
 
-a {
+/* a {
   color: var(--burnt-sienna);
   text-decoration: none;
-  font-weight: bold;
-}
+ 
+} */
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
-header {
+/* header {
   background: var(--primary);
-}
+} */
 
-header a {
+/* header a {
   color: var(--light);
-}
+} */
 
-button {
+/* button {
   font-size: 1.2rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
@@ -106,31 +106,35 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  /* background-color: var(--secondary); */
+  
+} */
+
+button {
+  border-radius: 0.5rem;
 }
 
-button:hover {
+/* button:hover {
   opacity: 0.8;
   background-color: var(--persian-green);
   color: var(--burnt-sienna-lite);
-}
+} */
 
 button[disabled] {
   cursor: default;
   opacity: 0.8;
 }
 
-img {
+/* img {
   max-width: 100%;
-}
+} */
 
 span[role='img'] {
   cursor: default;
 }
 
-form {
+/* form {
   width: 40%;
-}
+} */
 
 input {
   font-size: 1rem;

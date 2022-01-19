@@ -86,6 +86,9 @@ const Button = styled.button`
   letter-spacing: 1px;
   background-color: transparent;
   cursor: pointer;
+  &:hover {
+    background-color: var(--persian-green);
+  }
 `;
 
 const HeroSlides = () => {

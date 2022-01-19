@@ -9,7 +9,7 @@ export const sliderItems = [
   {
     id: 2,
     img: 'https://images.pexels.com/photos/4009358/pexels-photo-4009358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    title: '2021 GONE! TRY SOMETHING NEW!',
+    title: 'TRY SOMETHING NEW!',
     desc: ' NO MIRROR REQUIRED. JUST MOTIVATION!',
     bg: 'rgb(253, 229, 209)',
   },

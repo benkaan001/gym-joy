@@ -2,6 +2,7 @@ import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { mobile } from '../../mobileScreen';
 
 const ListItemWrapper = styled.ul`
   display: flex;
@@ -23,6 +24,7 @@ const LoginListItem = styled.span`
   padding-left: var(--spacing-two);
   text-decoration: none;
   color: white;
+  ${mobile({ paddingRight: '0' })};
 `;
 
 const LogoContainer = styled.div`
@@ -43,7 +45,10 @@ function Nav() {
         <ListItemWrapper>
           <ListItem>
             <Link
-              style={{ color: 'var(--burnt-sienna-lite)' }}
+              style={{
+                color: 'var(--burnt-sienna-lite)',
+                textDecoration: 'none',
+              }}
               to='/orderHistory'
             >
               Order History
@@ -51,7 +56,7 @@ function Nav() {
           </ListItem>
           <ListItem>
             <Link
-              style={{ color: 'white' }}
+              style={{ color: 'white', textDecoration: 'none' }}
               to='/'
               onClick={() => Auth.logout()}
             >
@@ -64,12 +69,25 @@ function Nav() {
       return (
         <ListItemWrapper>
           <LoginListItem>
-            <Link style={{ color: 'var(--burnt-sienna-lite)' }} to='/signup'>
+            <Link
+              style={{
+                color: 'var(--burnt-sienna-lite)',
+                textDecoration: 'none',
+              }}
+              to='/signup'
+            >
               Signup
             </Link>
           </LoginListItem>
           <LoginListItem>
-            <Link style={{ color: 'var(--burnt-sienna-lite)' }} to='/login'>
+            <Link
+              style={{
+                color: 'var(--burnt-sienna-lite)',
+                textDecoration: 'none',
+              }}
+              to='/login'
+              onClick={() => window.location.replace('/#login')}
+            >
               Login
             </Link>
           </LoginListItem>
@@ -81,7 +99,11 @@ function Nav() {
   return (
     <LogoContainer>
       <Link
-        style={{ color: 'var(--burnt-sienna-lite)', fontSize: '2.25rem' }}
+        style={{
+          color: 'var(--burnt-sienna-lite)',
+          fontSize: '2.25rem',
+          textDecoration: 'none',
+        }}
         to='/'
       >
         H | A | L | O

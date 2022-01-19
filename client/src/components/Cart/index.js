@@ -68,11 +68,27 @@ const CheckoutTotalTitle = styled.h4`
   font-weight: 300;
   font-size: 22px;
 `;
+
 const CheckoutTotalTitleInactive = styled.button`
   font-size: 14px;
   width: 100%;
   color: white;
+  display: inline-block;
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  transition: all 0.2s;
   background-color: var(--persian-green);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3.5px 6.5px rgba(0, 0, 0, 0.4);
+  }
 `;
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -145,26 +161,19 @@ const Cart = () => {
           ))}
           <CheckoutTotal>
             <CheckoutTotalTitle>Total: ${calculateTotal()}</CheckoutTotalTitle>
-            {Auth.loggedIn() ? (
-              <CheckoutButton onClick={submitCheckout}>CheckOut</CheckoutButton>
-            ) : (
-              <CheckoutTotalTitleInactive>
-                <Link
-                  to='/login'
-                  style={{ textDecoration: 'none', color: 'white' }}
-                >
-                  LogIn to Checkout
-                </Link>
-              </CheckoutTotalTitleInactive>
-            )}
           </CheckoutTotal>
         </CartItemWrapper>
       ) : (
         <ShoppingCartOutlined />
-
-        // <span role='img' aria-label='trash'>
-        //   🛒
-        // </span>
+      )}
+      {Auth.loggedIn() ? (
+        <CheckoutButton onClick={submitCheckout}>CheckOut</CheckoutButton>
+      ) : (
+        <CheckoutTotalTitleInactive>
+          <Link to='/login' style={{ textDecoration: 'none', color: 'white' }}>
+            LogIn to Checkout
+          </Link>
+        </CheckoutTotalTitleInactive>
       )}
     </div>
   );

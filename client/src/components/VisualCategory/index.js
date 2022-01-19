@@ -40,6 +40,17 @@ const Button = styled.button`
   background-color: white;
   word-spacing: 3px;
   color: black;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--persian-green);
+  }
+
+  &:hover:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3.5px 6.5px rgba(0, 0, 0, 0.4);
+  }
 `;
 
 const VisualCategory = ({ item }) => {

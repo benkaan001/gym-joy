@@ -17,71 +17,18 @@ import Cart from '../components/Cart';
 
 import { idbPromise } from '../utils/helpers';
 import styled from 'styled-components';
-import { mobile } from '../mobileScreen';
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  width: 100%;
-  padding: 50px;
-  ${mobile({ flexDirection: 'column' })};
+  flex-direction: column;
 `;
 const ImageContainer = styled.div`
   flex: 1;
-  object-fit: cover;
-`;
-const Image = styled.img`
-  width: 100%;
-
-  object-fit: cover;
 `;
 const InfoContainer = styled.div`
   flex: 1;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ButtonWrapper = styled.div`
-  margin-bottom: 50px;
-  ${mobile({ marginBottom: '10px' })};
-`;
-
-const Title = styled.h1`
-  font-weight: 200;
-  font-size: 30px;
-`;
-
-const Desc = styled.p`
-  margin: 20px 0px 30px;
-  ${mobile({ textAlign: 'center' })};
-`;
-
-const Price = styled.span`
-  font-weight: 100;
-  font-size: 24px;
-  margin-bottom: 30px;
-`;
-
-const Button = styled.button`
-  padding: 10px;
-  border: 2px solid teal;
-  background-color: white;
-  cursor: pointer;
-  font-weight: 500;
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--persian-green);
-  }
-
-  &:hover:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3.5px 6.5px rgba(0, 0, 0, 0.4);
-  }
 `;
 
 function Detail() {
@@ -160,43 +107,29 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <Container>
-          <InfoContainer>
-            <ButtonWrapper>
-              <Button>
-                <Link
-                  to='/'
-                  style={{ textDecoration: 'none', textTransform: 'uppercase' }}
-                >
-                  Back to Products
-                </Link>
-              </Button>
-            </ButtonWrapper>
+        <div className='container my-1'>
+          <Link to='/'>← Back to Products</Link>
 
-            <Title>{currentProduct.name}</Title>
+          <h2>{currentProduct.name}</h2>
 
-            <Desc>{currentProduct.description}</Desc>
+          <p>{currentProduct.description}</p>
 
-            <Price>Price: ${currentProduct.price}</Price>
-            <ButtonWrapper>
-              <Button onClick={addToCart}>Add to Cart</Button>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <Button
-                disabled={!cart.find((p) => p._id === currentProduct._id)}
-                onClick={removeFromCart}
-              >
-                Remove from Cart
-              </Button>
-            </ButtonWrapper>
-          </InfoContainer>
-          <ImageContainer>
-            <Image
-              src={`/images/${currentProduct.image}`}
-              alt={currentProduct.name}
-            />
-          </ImageContainer>
-        </Container>
+          <p>
+            <strong>Price:</strong>${currentProduct.price}{' '}
+            <button onClick={addToCart}>Add to Cart</button>
+            <button
+              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              onClick={removeFromCart}
+            >
+              Remove from Cart
+            </button>
+          </p>
+
+          <img
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
+        </div>
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
       <Cart />
