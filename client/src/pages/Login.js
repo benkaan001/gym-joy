@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 import styled from 'styled-components';
-import { mobile } from '../mobileScreen';
+import { mobile, tablet } from '../mobileScreen';
 
 const Container = styled.div`
   width: 100vw;
@@ -19,6 +19,56 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  padding: 20px;
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ${mobile({ width: '100%' })}
+  ${tablet({ width: '100%' })}
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  ${mobile({ textAlign: 'center' })}
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  min-width: 40%;
+  margin: 20px 0px;
+  padding: 10px;
+`;
+
+const Button = styled.button`
+  width: 100%;
+  border: none;
+  padding: 15px 20px;
+  background-color: var(--persian-green);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+  ${tablet({ width: '80%', padding: '5px 10px' })}
+`;
+const Link1 = styled.p`
+  margin: 5px 5px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  ${mobile({ margin: '0px 2px' })};
+  ${tablet({ margin: '0px 15px' })}
 `;
 
 function Login(props) {
@@ -48,31 +98,24 @@ function Login(props) {
 
   return (
     <Container>
-      <div className='container my-1'>
-        <Link to='/signup'>← Go to Signup</Link>
+      <Wrapper>
+        <Title> LOGIN TO YOUR ACCOUNT</Title>
 
-        <h1>Login</h1>
-        <form onSubmit={handleFormSubmit}>
-          <div className='flex-row space-between my-2'>
-            <label htmlFor='email'>Email address:</label>
-            <input
-              placeholder='email@gmail.com'
-              name='email'
-              type='email'
-              id='email'
-              onChange={handleChange}
-            />
-          </div>
-          <div className='flex-row space-between my-2'>
-            <label htmlFor='pwd'>Password:</label>
-            <input
-              placeholder='******'
-              name='password'
-              type='password'
-              id='pwd'
-              onChange={handleChange}
-            />
-          </div>
+        <Form onSubmit={handleFormSubmit}>
+          <Input
+            placeholder='email@gmail.com'
+            name='email'
+            type='email'
+            id='email'
+            onChange={handleChange}
+          />
+          <Input
+            placeholder='******'
+            name='password'
+            type='password'
+            id='pwd'
+            onChange={handleChange}
+          />
           {error ? (
             <div>
               <p className='error-text'>
@@ -80,11 +123,12 @@ function Login(props) {
               </p>
             </div>
           ) : null}
-          <div className='flex-row flex-end'>
-            <button type='submit'>Submit</button>
-          </div>
-        </form>
-      </div>
+          <Button>SIGN IN</Button>
+        </Form>
+        <Link to='/signup'>
+          <Link1> CREATE A HALO ACCOUNT</Link1>
+        </Link>
+      </Wrapper>
     </Container>
   );
 }

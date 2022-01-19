@@ -13,7 +13,33 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import { useLazyQuery } from '@apollo/client';
 import styled from 'styled-components';
-import { CloseOutlined } from '@material-ui/icons';
+import {
+  CloseOutlined,
+  ShoppingCartOutlined,
+  ShoppingBasket,
+} from '@material-ui/icons';
+
+import { mobile } from '../../mobileScreen';
+import { Link } from 'react-router-dom';
+
+const ShoppingBagClosed = styled.div`
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2%;
+  right: 1%;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  padding: 0.25rem;
+  width: 50px;
+  height: 50px;
+  ${mobile({ position: 'relative', margin: '0 auto' })}
+`;
+
+const CartItemWrapper = styled.div``;
 
 const CartTitle = styled.h2`
   font-size: 1.5rem;
@@ -101,11 +127,9 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <div className='cart-closed' onClick={toggleCart}>
-        <span role='img' aria-label='trash'>
-          🛒
-        </span>
-      </div>
+      <ShoppingBagClosed onClick={toggleCart}>
+        <ShoppingBasket fontSize='medium' />
+      </ShoppingBagClosed>
     );
   }
   return (
@@ -115,7 +139,7 @@ const Cart = () => {
       </div>
       <CartTitle>Shopping Cart</CartTitle>
       {state.cart.length ? (
-        <div>
+        <CartItemWrapper>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
@@ -125,15 +149,22 @@ const Cart = () => {
               <CheckoutButton onClick={submitCheckout}>CheckOut</CheckoutButton>
             ) : (
               <CheckoutTotalTitleInactive>
-                LogIn to Checkout
+                <Link
+                  to='/login'
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  LogIn to Checkout
+                </Link>
               </CheckoutTotalTitleInactive>
             )}
           </CheckoutTotal>
-        </div>
+        </CartItemWrapper>
       ) : (
-        <span role='img' aria-label='trash'>
-          🛒
-        </span>
+        <ShoppingCartOutlined />
+
+        // <span role='img' aria-label='trash'>
+        //   🛒
+        // </span>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mobile, tablet } from '../mobileScreen';
+import { mobile, tablet } from '../../mobileScreen';
 
 const Container = styled.div`
   height: 30px;

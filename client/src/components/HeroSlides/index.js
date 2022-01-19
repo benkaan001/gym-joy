@@ -1,8 +1,8 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { sliderItems } from '../data';
-import { mobile, tablet } from '../mobileScreen';
+import { sliderItems } from '../../data';
+import { mobile, tablet } from '../../mobileScreen';
 
 const Container = styled.div`
   width: 100%;
@@ -88,7 +88,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Slider = () => {
+const HeroSlides = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     if (direction === 'left') {
@@ -125,4 +125,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default HeroSlides;

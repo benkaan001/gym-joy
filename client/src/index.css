@@ -111,7 +111,7 @@ button {
 
 button:hover {
   opacity: 0.8;
-  background-color: var(--charcoal);
+  background-color: var(--persian-green);
   color: var(--burnt-sienna-lite);
 }
 

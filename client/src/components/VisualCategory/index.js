@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mobile, tablet } from '../mobileScreen';
-import { Link } from 'react-router-dom';
+import { mobile, tablet } from '../../mobileScreen';
 
 const Container = styled.div`
   flex: 1;
@@ -43,10 +42,9 @@ const Button = styled.button`
   color: black;
 `;
 
-const Category = ({ item }) => {
+const VisualCategory = ({ item }) => {
   return (
     <Container>
-      {/* <Link to={`/login`}> */}
       <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
@@ -59,4 +57,4 @@ const Category = ({ item }) => {
   );
 };
 
-export default Category;
+export default VisualCategory;

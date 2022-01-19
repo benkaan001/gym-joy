@@ -14,18 +14,17 @@ import { StoreProvider } from './utils/GlobalState';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
-// import Login from './pages/Login';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
-import Announcement from './components/Announcement';
-import Footer from './components/Footer';
-import Slider from './components/Slider';
+import Announcement1 from './components/Announcement1';
+import Footer1 from './components/Footer1';
+import HeroSlides from './components/HeroSlides';
 
-import Categories from './components/Categories';
-import Newsletter from './components/Newsletter';
+import VisualCategories from './components/VisualCategories';
+import NewsletterSignUp from './components/NewsletterSignUp';
 import Cart from './components/Cart';
 
 const httpLink = createHttpLink({
@@ -53,12 +52,12 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-            <Announcement />
+            <Announcement1 />
             <Nav>
               <Cart />
             </Nav>
-            <Slider />
-            <Categories />
+            <HeroSlides />
+            <VisualCategories />
             <div className='body'>
               <Switch>
                 <Route exact path='/' component={Home} />
@@ -70,8 +69,8 @@ function App() {
                 <Route component={NoMatch} />
               </Switch>
             </div>
-            <Newsletter />
-            <Footer />
+            <NewsletterSignUp />
+            <Footer1 />
           </StoreProvider>
         </div>
       </Router>

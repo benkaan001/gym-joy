@@ -1,7 +1,8 @@
 import { Send } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
-import { mobile, tablet } from '../mobileScreen';
+import { mobile, tablet } from '../../mobileScreen';
+// import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 const Container = styled.div`
   height: 60vh;
@@ -48,9 +49,10 @@ const Button = styled.button`
   flex: 1;
   background-color: var(--persian-green);
   color: white;
+  margin: -2px;
 `;
 
-const Newsletter = () => {
+const NewsletterSignUp = () => {
   return (
     <Container>
       <Title>Classes and Events</Title>
@@ -61,6 +63,7 @@ const Newsletter = () => {
       </Description>
       <InputContainer>
         <Input placeholder='enter your email here' />
+        {/* <MailchimpSubscribe url={process.env.MAILCHIMP_URL} /> */}
         <Button>
           <Send />
         </Button>
@@ -69,4 +72,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default NewsletterSignUp;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
-import { categories } from '../data';
-import Category from './Category';
-import { mobile, tablet } from '../mobileScreen';
+import { categories } from '../../data';
+import VisualCategory from '../VisualCategory';
+import { mobile, tablet } from '../../mobileScreen';
 
 const Container = styled.div`
   display: flex;
@@ -12,14 +12,14 @@ const Container = styled.div`
   ${tablet({ flexDirection: 'column', padding: '0px' })}
 `;
 
-const Categories = () => {
+const VisualCategories = () => {
   return (
     <Container>
       {categories.map((item) => (
-        <Category item={item} key={item.id}></Category>
+        <VisualCategory item={item} key={item.id}></VisualCategory>
       ))}
     </Container>
   );
 };
 
-export default Categories;
+export default VisualCategories;
