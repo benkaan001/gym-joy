@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
 
-function Jumbotron({ children }) {
-  return (
-    <div
-      style={{ height: 560, clear: "both", paddingTop: 120, textAlign: "center" }}
-    >
-      {children}
-    </div>
-  );
-}
+const JumbotronContainer = styled.div`
+  height: 560;
+  clear: both;
+  padding-top: 120;
+  text-align: center;
+`;
+
+const Jumbotron = ({ children }) => {
+  return <JumbotronContainer>{children}</JumbotronContainer>;
+};
 
 export default Jumbotron;

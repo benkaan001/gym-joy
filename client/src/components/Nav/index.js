@@ -1,49 +1,94 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
-// import Button from '@mui/material/Button';
+import styled from 'styled-components';
+
+const ListItemWrapper = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-decoration: none;
+`;
+
+const ListItem = styled.span`
+  margin-right: var(--spacing-one);
+  margin-left: var(--spacing-one);
+`;
+const LoginListItem = styled.span`
+  margin-right: var(--spacing-one);
+  margin-left: var(--spacing-one);
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+  padding-right: var(--spacing-two);
+  padding-left: var(--spacing-two);
+  text-decoration: none;
+  color: white;
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: var(--spacing-one);
+  padding-left: var(--spacing-one);
+  background-color: var(--charcoal);
+`;
+
+const ShowNavigation = styled.nav``;
 
 function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className='flex-row'>
-          <li className='mx-1'>
-            <Link to='/orderHistory'>Order History</Link>
-          </li>
-          <li className='mx-1'>
-            <a href='/' onClick={() => Auth.logout()}>
+        <ListItemWrapper>
+          <ListItem>
+            <Link
+              style={{ color: 'var(--burnt-sienna-lite)' }}
+              to='/orderHistory'
+            >
+              Order History
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              style={{ color: 'white' }}
+              to='/'
+              onClick={() => Auth.logout()}
+            >
               Logout
-            </a>
-          </li>
-        </ul>
+            </Link>
+          </ListItem>
+        </ListItemWrapper>
       );
     } else {
       return (
-        <ul className='flex-row'>
-          <span className='mx-1 my-2 px-2'>
-            <Link to='/signup'>Signup</Link>
-            {/* <Link to='/signup'>
-              <Button>Signup</Button>
-            </Link> */}
-          </span>
-          <span className='mx-1 my-2 px-2'>
-            <Link to='/login'>Login</Link>
-          </span>
-        </ul>
+        <ListItemWrapper>
+          <LoginListItem>
+            <Link style={{ color: 'var(--burnt-sienna-lite)' }} to='/signup'>
+              Signup
+            </Link>
+          </LoginListItem>
+          <LoginListItem>
+            <Link style={{ color: 'var(--burnt-sienna-lite)' }} to='/login'>
+              Login
+            </Link>
+          </LoginListItem>
+        </ListItemWrapper>
       );
     }
   }
 
   return (
-    <header className='flex-row px-1 navbar'>
-      <h1>
-        <Link to='/'>H-A-L-O</Link>
-        {/* <Button variant='contained'>Contained</Button> */}
-      </h1>
+    <LogoContainer>
+      <Link
+        style={{ color: 'var(--burnt-sienna-lite)', fontSize: '2.25rem' }}
+        to='/'
+      >
+        H | A | L | O
+      </Link>
 
-      <nav>{showNavigation()}</nav>
-    </header>
+      <ShowNavigation>{showNavigation()}</ShowNavigation>
+    </LogoContainer>
   );
 }
 

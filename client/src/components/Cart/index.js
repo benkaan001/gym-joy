@@ -12,9 +12,44 @@ import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 
 import { useLazyQuery } from '@apollo/client';
+import styled from 'styled-components';
+import { CloseOutlined } from '@material-ui/icons';
+
+const CartTitle = styled.h2`
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 0.5rem;
+  margin: 1rem 0;
+  font-weight: 300;
+`;
+const CheckoutButton = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: var(--charcoal);
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+`;
+
+const CheckoutTotal = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: space-between;
+`;
+
+const CheckoutTotalTitle = styled.h4`
+  font-weight: 300;
+  font-size: 22px;
+`;
+const CheckoutTotalTitleInactive = styled.button`
+  font-size: 14px;
+  width: 100%;
+  color: white;
+  background-color: var(--persian-green);
+`;
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
-
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   // console.log(state);
@@ -76,22 +111,24 @@ const Cart = () => {
   return (
     <div className='cart'>
       <div className='close' onClick={toggleCart}>
-        [close]
+        <CloseOutlined />
       </div>
-      <h2>Shopping Cart</h2>
+      <CartTitle>Shopping Cart</CartTitle>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
-          <div className='flex-row space-between'>
-            <strong>Total: ${calculateTotal()}</strong>
+          <CheckoutTotal>
+            <CheckoutTotalTitle>Total: ${calculateTotal()}</CheckoutTotalTitle>
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <CheckoutButton onClick={submitCheckout}>CheckOut</CheckoutButton>
             ) : (
-              <span>(log in to check out)</span>
+              <CheckoutTotalTitleInactive>
+                LogIn to Checkout
+              </CheckoutTotalTitleInactive>
             )}
-          </div>
+          </CheckoutTotal>
         </div>
       ) : (
         <span role='img' aria-label='trash'>

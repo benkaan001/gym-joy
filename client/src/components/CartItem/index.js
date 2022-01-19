@@ -3,6 +3,37 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 
 import { idbPromise } from '../../utils/helpers';
+import styled from 'styled-components';
+import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
+
+const ContainerItem = styled.div``;
+
+const Image = styled.img``;
+
+const StyledCartItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
+
+const CartItemContent = styled.span`
+  cursor: default;
+  font-weight: 300;
+  font-size: 16px;
+`;
+
+const CartItemContentInput = styled.input`
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+`;
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -36,32 +67,35 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className='flex-row'>
-      <div>
-        <img src={`/images/${item.image}`} alt='' />
-      </div>
-      <div>
-        <div>
-          {item.name}, ${item.price}
-        </div>
-        <div>
-          <span>Qty:</span>
-          <input
+    <Container>
+      <ContainerItem>
+        <Image src={`/images/${item.image}`} alt='' />
+      </ContainerItem>
+      <ContainerItem>
+        <StyledCartItem>
+          <CartItemContent> {item.name}</CartItemContent>
+          <CartItemContent> ${item.price}</CartItemContent>
+        </StyledCartItem>
+        <StyledCartItem>
+          <CartItemContentInput
             type='number'
             placeholder='1'
             value={item.purchaseQuantity}
             onChange={onChange}
           />
-          <span
-            role='img'
-            aria-label='trash'
-            onClick={() => removeFromCart(item)}
-          >
-            🗑️
-          </span>
-        </div>
-      </div>
-    </div>
+          <CartItemContent>
+            <DeleteForeverRoundedIcon
+              fontSize='medium'
+              onClick={() => removeFromCart(item)}
+              style={{
+                cursor: 'pointer',
+                color: 'var(--burnt-sienna)',
+              }}
+            />
+          </CartItemContent>
+        </StyledCartItem>
+      </ContainerItem>
+    </Container>
   );
 };
 
