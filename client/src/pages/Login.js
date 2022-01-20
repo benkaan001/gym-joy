@@ -20,6 +20,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   ${mobile({ height: '60vh' })}
+  ${tablet({ height: '60vh' })}
 `;
 
 const Wrapper = styled.div`

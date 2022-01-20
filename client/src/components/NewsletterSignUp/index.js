@@ -12,7 +12,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   ${mobile({ height: '30vh' })}
-  ${mobile({ height: '40vh' })}
+  ${tablet({ height: '40vh' })}
 `;
 
 const Title = styled.h1`

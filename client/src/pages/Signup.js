@@ -21,6 +21,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   ${mobile({ height: '60vh' })}
+  ${tablet({ height: '60vh' })}
 `;
 
 const Wrapper = styled.div`
@@ -31,6 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   ${mobile({ width: '95%' })}
+  ${tablet({ width: '85%' })}
 `;
 
 const Title = styled.h1`

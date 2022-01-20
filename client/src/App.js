@@ -19,15 +19,15 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
-import Announcement1 from './components/Announcement1';
-import Footer1 from './components/Footer1';
+import Announcement from './components/Announcement';
+import Footer from './components/Footer';
 import HeroSlides from './components/HeroSlides';
 
 import VisualCategories from './components/VisualCategories';
 import NewsletterSignUp from './components/NewsletterSignUp';
 import Cart from './components/Cart';
 import styled from 'styled-components';
-import ScrollToTop from './components/ScrollToTop';
+// import ScrollToTop from './components/ScrollToTop';
 
 const Wrapper = styled.div``;
 
@@ -54,10 +54,10 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         <Wrapper>
           <StoreProvider>
-            <Announcement1 />
+            <Announcement />
             <Nav>
               <Cart />
             </Nav>
@@ -75,7 +75,7 @@ const App = () => {
               </Switch>
             </Wrapper>
             <NewsletterSignUp />
-            <Footer1 />
+            <Footer />
           </StoreProvider>
         </Wrapper>
       </Router>

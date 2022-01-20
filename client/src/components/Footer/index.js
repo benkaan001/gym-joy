@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import styled from 'styled-components';
 import { mobile, tablet } from '../../mobileScreen';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -38,6 +39,11 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+`;
+
+const SocialIconLink = styled.a`
+  border-radius: 50%;
+  color: var(--burnt-sienna);
 `;
 
 const Center = styled.div`
@@ -89,19 +95,49 @@ const Footer = () => {
         </Desc>
         <SocialContainer>
           <SocialIcon>
-            <Twitter />
+            <SocialIconLink
+              href='https://github.com/benkaan001'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Twitter />
+            </SocialIconLink>
           </SocialIcon>
           <SocialIcon>
-            <Pinterest />
+            <SocialIconLink
+              href='https://github.com/benkaan001'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Pinterest />
+            </SocialIconLink>
           </SocialIcon>
           <SocialIcon>
-            <YouTube />
+            <SocialIconLink
+              href='https://github.com/benkaan001'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <YouTube />
+            </SocialIconLink>
           </SocialIcon>
           <SocialIcon>
-            <Facebook />
+            <SocialIconLink
+              href='https://github.com/benkaan001'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Facebook />
+            </SocialIconLink>
           </SocialIcon>
           <SocialIcon>
-            <Instagram />
+            <SocialIconLink
+              href='https://github.com/benkaan001'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Instagram />
+            </SocialIconLink>
           </SocialIcon>
         </SocialContainer>
       </Left>
@@ -123,8 +159,8 @@ const Footer = () => {
       <Right>
         <Title>CONTACT US</Title>
         <ContactItem>
-          <Room style={{ marginRight: '10px' }} /> 1818 Cornwall Ave, Vancouver
-          BC V6J 1C7
+          <Room style={{ marginRight: '10px' }} /> 1818 Fake Ave, Vancouver BC
+          V6J 1C7
         </ContactItem>
         <ContactItem>
           <Phone style={{ marginRight: '10px' }} /> 1.877.263.9300
