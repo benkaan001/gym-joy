@@ -26,7 +26,7 @@
 
 - The application uses the Apollo Client library to consume GraphQL APIs on the front end.
 
-- This is also Progressive Web Application that uses web manifest and service worker for offline functionality
+- This is a Progressive Web Application that uses `web manifest` and `service worker` for offline functionality
 
 ## Installation
 
@@ -49,18 +49,23 @@
 You can access the deployed application [here](https://sleepy-ocean-28624.herokuapp.com).
 
 ![threeInOne](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_threeInOne.png)
-![phone](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Phone.png)
-![tablet](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Tablet.png)
+
+<!-- ![phone](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Phone.png)
+![tablet](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Tablet.png) -->
+
+![demo gif](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO-UI-desktop.gif)
 ![register](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_register.png)
 ![signin](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_signin.png)
 ![singleProduct](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_singleProduct.png)
 ![payment](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_payment.png)
 ![orderHistory](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_orderHistory.png)
-![shoppingCart](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_shoppingCart.png)
-![demo gif](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO-UI-desktop.gif)
+
+<!-- ![shoppingCart](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_shoppingCart.png) -->
+
 ![tests](https://github.com/benkaan001/gym-joy/blob/main/assets/Tests.png)
 ![IndexedDB](https://github.com/benkaan001/gym-joy/blob/main/assets/IndexedDB.png)
-![desktop](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Desktop.png)
+
+<!-- ![desktop](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Desktop.png) -->
 
 ## Contributing
 
