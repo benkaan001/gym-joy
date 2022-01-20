@@ -40,7 +40,7 @@
 
 - Once completed, your .env file should resemble the following example
 
-`JWT_SECRET= yourSecretStringGoesHere JWT_EXPIRATION= '2hr' STRIPE_KEY='<yourstripekey>' MONGODB_URI=mongodb+srv://benkaan:<yourMongoDBPassword>@nodejs.xqscs.mongodb.net/<theNameOfYourDataBase>?retryWrites=true&w=majority`
+- `JWT_SECRET= yourSecretStringGoesHere JWT_EXPIRATION= '2hr' STRIPE_KEY='<yourstripekey>' MONGODB_URI=mongodb+srv://benkaan:<yourMongoDBPassword>@nodejs.xqscs.mongodb.net/<theNameOfYourDataBase>?retryWrites=true&w=majority`
 
 - If you would like to incorporate React-Mailchimp-Subscribe by uncommenting the code in the `NewsletterSignUp` component. You also need to create a `.env` file in the root of the application with the `MAILCHIMP_URL` value provided by [mailchimp](https://us20.admin.mailchimp.com/lists/dashboard/signup-forms/)
 
@@ -48,7 +48,19 @@
 
 You can access the deployed application [here](https://sleepy-ocean-28624.herokuapp.com).
 
-![demo gif]()
+![threeInOne](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_threeInOne.png)
+![phone](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Phone.png)
+![tablet](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Tablet.png)
+![register](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_register.png)
+![signin](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_signin.png)
+![singleProduct](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_singleProduct.png)
+![payment](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_payment.png)
+![orderHistory](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_orderHistory.png)
+![shoppingCart](https://github.com/benkaan001/gym-joy/blob/main/assets/halo_shoppingCart.png)
+![demo gif](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO-UI-desktop.gif)
+![tests](https://github.com/benkaan001/gym-joy/blob/main/assets/Tests.png)
+![IndexedDB](https://github.com/benkaan001/gym-joy/blob/main/assets/IndexedDB.png)
+![desktop](https://github.com/benkaan001/gym-joy/blob/main/assets/HALO_UI_Desktop.png)
 
 ## Contributing
 
