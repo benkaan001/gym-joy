@@ -74,6 +74,12 @@ const Link1 = styled.p`
   ${tablet({ margin: '0px 15px' })}
 `;
 
+const Error = styled.div``;
+
+const ErrorText = styled.p`
+  color: var(--error);
+`;
+
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
@@ -120,11 +126,11 @@ function Login(props) {
               onChange={handleChange}
             />
             {error ? (
-              <div>
-                <p className='error-text'>
+              <Error>
+                <ErrorText className='error-text'>
                   The provided credentials are incorrect
-                </p>
-              </div>
+                </ErrorText>
+              </Error>
             ) : null}
             <Button>SIGN IN</Button>
           </Form>

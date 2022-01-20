@@ -16,6 +16,15 @@ const Container = styled.div`
   padding: 50px;
   ${mobile({ flexDirection: 'column' })};
 `;
+
+const ImageContainerWrapper = styled.div`
+  width: 25%;
+  text-align: center;
+  padding-top: var(--spacing-one);
+  padding-bottom: var(--spacing-one);
+  padding-right: var(--spacing-one);
+  padding-left: var(--spacing-one);
+`;
 const ImageContainer = styled.div`
   flex: 1;
   object-fit: cover;
@@ -108,7 +117,7 @@ function OrderHistory() {
               </Price>
               <InfoContainer>
                 {order.products.map(({ _id, image, name, price }, index) => (
-                  <div key={index} className='card px-1 py-1'>
+                  <ImageContainerWrapper key={index}>
                     <ImageContainer key={index}>
                       <Link
                         to={`/products/${_id}`}
@@ -120,7 +129,7 @@ function OrderHistory() {
                     </ImageContainer>
 
                     <Price>${price}</Price>
-                  </div>
+                  </ImageContainerWrapper>
                 ))}
               </InfoContainer>
             </InfoContainer>

@@ -51,7 +51,7 @@ function Nav() {
               }}
               to='/orderHistory'
             >
-              Order History
+              ORDER HISTORY
             </Link>
           </ListItem>
           <ListItem>
@@ -60,7 +60,7 @@ function Nav() {
               to='/'
               onClick={() => Auth.logout()}
             >
-              Logout
+              LOGOUT
             </Link>
           </ListItem>
         </ListItemWrapper>
@@ -76,7 +76,7 @@ function Nav() {
               }}
               to='/signup'
             >
-              Signup
+              REGISTER
             </Link>
           </LoginListItem>
           <LoginListItem>
@@ -88,7 +88,7 @@ function Nav() {
               to='/login'
               onClick={() => window.location.replace('/#login')}
             >
-              Login
+              LOGIN
             </Link>
           </LoginListItem>
         </ListItemWrapper>
