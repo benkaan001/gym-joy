@@ -87,7 +87,7 @@ const Button = styled.button`
   }
 `;
 
-function OrderHistory() {
+const OrderHistory = () => {
   const { data } = useQuery(QUERY_USER);
   let user;
 
@@ -138,6 +138,6 @@ function OrderHistory() {
       ) : null}
     </>
   );
-}
+};
 
 export default OrderHistory;

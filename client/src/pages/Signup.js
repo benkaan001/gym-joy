@@ -76,7 +76,7 @@ const Link1 = styled.p`
   ${tablet({ margin: '0px 15px' })}
 `;
 
-function Signup(props) {
+const Signup = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
@@ -150,6 +150,6 @@ function Signup(props) {
       </Wrapper>
     </Container>
   );
-}
+};
 
 export default Signup;

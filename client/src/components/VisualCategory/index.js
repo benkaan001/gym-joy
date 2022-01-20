@@ -63,7 +63,6 @@ const VisualCategory = ({ item }) => {
           SHOP WHAT'S NEW
         </Button>
       </Info>
-      {/* </Link> */}
     </Container>
   );
 };

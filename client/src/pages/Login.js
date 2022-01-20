@@ -80,7 +80,7 @@ const ErrorText = styled.p`
   color: var(--error);
 `;
 
-function Login(props) {
+const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -141,6 +141,6 @@ function Login(props) {
       </Wrapper>
     </Container>
   );
-}
+};
 
 export default Login;

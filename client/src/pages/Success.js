@@ -30,7 +30,7 @@ const Header3 = styled.h3`
   ${mobile({ fontSize: '14px' })};
 `;
 
-function Success() {
+const Success = () => {
   const [addOrder] = useMutation(ADD_ORDER);
 
   useEffect(() => {
@@ -64,6 +64,6 @@ function Success() {
       </Container>
     </div>
   );
-}
+};
 
 export default Success;

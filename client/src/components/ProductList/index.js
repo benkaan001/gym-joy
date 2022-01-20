@@ -9,6 +9,18 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 
 import { idbPromise } from '../../utils/helpers';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+`;
 
 const ProductList = () => {
   const [state, dispatch] = useStoreContext();
@@ -51,9 +63,9 @@ const ProductList = () => {
   };
 
   return (
-    <div className='my-2'>
+    <Container>
       {state.products.length ? (
-        <div className='flex-row'>
+        <Wrapper>
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
@@ -64,12 +76,12 @@ const ProductList = () => {
               quantity={product.quantity}
             />
           ))}
-        </div>
+        </Wrapper>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
       {loading ? <img src={spinner} alt='loading' /> : null}
-    </div>
+    </Container>
   );
 };
 
