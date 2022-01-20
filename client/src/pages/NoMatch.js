@@ -1,18 +1,33 @@
 import React from 'react';
-import Jumbotron from '../components/Jumbotron';
+import styled from 'styled-components';
+
+import { mobile } from '../mobileScreen';
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60vh;
+  ${mobile({ height: '30vh' })};
+`;
+const Header = styled.h1`
+  font-weight: 400;
+  ${mobile({ fontSize: '20px' })};
+`;
+const Emoji = styled.span``;
 
 const NoMatch = () => {
   return (
-    <div>
-      <Jumbotron>
-        <h1>404 Page Not Found</h1>
-        <h1>
-          <span role='img' aria-label='Face With Rolling Eyes Emoji'>
-            🙄
-          </span>
-        </h1>
-      </Jumbotron>
-    </div>
+    <Container>
+      <Header>Oops, that page does not exist...</Header>
+      <Header>
+        <Emoji role='img' aria-label='Face With Rolling Eyes Emoji'>
+          🙄
+        </Emoji>
+      </Header>
+    </Container>
   );
 };
 
