@@ -40,13 +40,13 @@
 
 - Once completed, your .env file should resemble the following example
 
-## `JWT_SECRET= yourSecretStringGoesHere`
+#### `JWT_SECRET= yourSecretStringGoesHere`
 
-## `JWT_EXPIRATION= '2hr'`
+#### `JWT_EXPIRATION= '2hr'`
 
-## ` STRIPE_KEY='<yourstripekey>'`
+#### ` STRIPE_KEY='<yourstripekey>'`
 
-## `MONGODB_URI=mongodb+srv://benkaan:<yourMongoDBPassword>@nodejs.xqscs.mongodb.net/<theNameOfYourDataBase>?retryWrites=true&w=majority`
+#### `MONGODB_URI=mongodb+srv://benkaan:<yourMongoDBPassword>@nodejs.xqscs.mongodb.net/<theNameOfYourDataBase>?retryWrites=true&w=majority`
 
 - If you would like to incorporate React-Mailchimp-Subscribe by uncommenting the code in the `NewsletterSignUp` component. You also need to create a `.env` file in the root of the application with the `MAILCHIMP_URL` value provided by [mailchimp](https://us20.admin.mailchimp.com/lists/dashboard/signup-forms/)
 
