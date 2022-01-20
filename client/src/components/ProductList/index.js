@@ -10,7 +10,7 @@ import { UPDATE_PRODUCTS } from '../../utils/actions';
 
 import { idbPromise } from '../../utils/helpers';
 
-function ProductList() {
+const ProductList = () => {
   const [state, dispatch] = useStoreContext();
   const { currentCategory } = state;
   const { loading, data } = useQuery(QUERY_PRODUCTS);
@@ -40,7 +40,7 @@ function ProductList() {
     }
   }, [data, dispatch, loading]);
 
-  function filterProducts() {
+  const filterProducts = () => {
     if (!currentCategory) {
       return state.products;
     }
@@ -48,7 +48,7 @@ function ProductList() {
     return state.products.filter(
       (product) => product.category._id === currentCategory
     );
-  }
+  };
 
   return (
     <div className='my-2'>
@@ -71,6 +71,6 @@ function ProductList() {
       {loading ? <img src={spinner} alt='loading' /> : null}
     </div>
   );
-}
+};
 
 export default ProductList;

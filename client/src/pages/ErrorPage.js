@@ -18,7 +18,7 @@ const Header = styled.h1`
 `;
 const Emoji = styled.span``;
 
-const NoMatch = () => {
+const ErrorPage = () => {
   return (
     <Container>
       <Header>Oops, that page does not exist...</Header>
@@ -31,4 +31,4 @@ const NoMatch = () => {
   );
 };
 
-export default NoMatch;
+export default ErrorPage;

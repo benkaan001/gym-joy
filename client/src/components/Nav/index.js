@@ -38,7 +38,7 @@ const LogoContainer = styled.div`
 
 const ShowNavigation = styled.nav``;
 
-function Nav() {
+const Nav = () => {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -112,6 +112,6 @@ function Nav() {
       <ShowNavigation>{showNavigation()}</ShowNavigation>
     </LogoContainer>
   );
-}
+};
 
 export default Nav;

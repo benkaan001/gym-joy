@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { pluralize } from '../../utils/helpers';
 
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
@@ -103,9 +102,6 @@ function ProductItem(item) {
         <ItemName>{name}</ItemName>
       </Link>
       <ItemPriceWrapper>
-        {/* <div>
-          {quantity} {pluralize('item', quantity)} in stock
-        </div> */}
         <ItemPrice>${price}</ItemPrice>
       </ItemPriceWrapper>
       <Button onClick={addToCart}>ADD TO CART</Button>

@@ -31,10 +31,10 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   flex: 1;
   object-fit: cover;
+  ${mobile({ textAlign: 'center' })};
 `;
 const Image = styled.img`
-  width: 100%;
-
+  width: 50%;
   object-fit: cover;
 `;
 const InfoContainer = styled.div`
@@ -84,7 +84,9 @@ const Button = styled.button`
   }
 `;
 
-function Detail() {
+const Spinner = styled.img``;
+
+const Detail = () => {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
@@ -198,10 +200,10 @@ function Detail() {
           </ImageContainer>
         </Container>
       ) : null}
-      {loading ? <img src={spinner} alt='loading' /> : null}
+      {loading ? <Spinner src={spinner} alt='loading' /> : null}
       <Cart />
     </>
   );
-}
+};
 
 export default Detail;

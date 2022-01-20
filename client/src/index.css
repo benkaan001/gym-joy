@@ -77,6 +77,16 @@ h6 {
 button {
   border-radius: 0.5rem;
 }
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--persian-green);
+}
+
+button:hover:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3.5px 6.5px rgba(0, 0, 0, 0.4);
+}
 
 input {
   font-size: 1rem;

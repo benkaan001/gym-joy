@@ -67,7 +67,7 @@ const Button = styled.button`
   }
 `;
 
-function CategoryMenu() {
+const CategoryMenu = () => {
   const [state, dispatch] = useStoreContext();
   const { categories } = state;
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
@@ -110,7 +110,6 @@ function CategoryMenu() {
       <Info>
         <Title id='categories'>CATEGORIES</Title>
         <CategoryItemWrapper>
-          {/* <h2>Choose a Category:</h2> */}
           {categories.map((item) => (
             <Button
               key={item._id}
@@ -125,6 +124,6 @@ function CategoryMenu() {
       </Info>
     </Container>
   );
-}
+};
 
 export default CategoryMenu;

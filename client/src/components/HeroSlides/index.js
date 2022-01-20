@@ -51,20 +51,11 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
   height: 100%;
   flex: 1;
-  /* perspective: 1500px; */
 `;
 const Image = styled.img`
   height: 80%;
   padding-top: 50px;
   padding-left: 100px;
-
-  &:hover {
-    /* transform: rotate(0); */
-    /* transform: rotateX(10deg) rotateY(-20deg) rotateZ(3deg); */
-    /* box-shadow: 2px 10px 30px hsla(0, 0%, 0%, 0.25); */
-    /* border-radius: 0.25em;
-    transition: 0.3s; */
-  }
 `;
 
 const InfoContainer = styled.div`
