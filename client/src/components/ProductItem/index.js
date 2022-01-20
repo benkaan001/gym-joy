@@ -29,13 +29,13 @@ const ItemImage = styled.img`
 `;
 
 const ItemName = styled.span`
-  color: brown;
+  color: darkslategray;
   font-size: 20px;
   font-weight: 300;
   cursor: pointer;
   text-transform: uppercase;
   &:hover {
-    background-color: var(--charcoal);
+    background-color: var(--persian-green);
     color: white;
   }
 

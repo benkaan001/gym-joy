@@ -51,17 +51,19 @@ const Title = styled.h2`
   font-weight: 400;
   word-spacing: 10px;
   margin-bottom: 20px;
-  border-radius: 0.5rem;
-  background-color: var(--charcoal);
+  border-radius: 80%;
+  background-color: azure;
+  color: var(--sandy-brown);
 `;
 const Button = styled.button`
   border: none;
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
-  background-color: white;
+  background-color: azure;
   word-spacing: 3px;
-  color: black;
+  color: var(--charcoal);
+  border-radius: 80%;
   &:hover {
     background-color: var(--persian-green);
   }
