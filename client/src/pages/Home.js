@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import ProductList from "../components/ProductList";
-import CategoryMenu from "../components/CategoryMenu";
+import React from 'react';
+import ProductList from '../components/ProductList';
+import CategoryMenu from '../components/CategoryMenu';
+import Cart from '../components/Cart';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 const Home = () => {
-  const [currentCategory, setCategory] = useState("");
-
   return (
-    <div className="container">
-      <CategoryMenu setCategory={setCategory} />
-      <ProductList currentCategory={currentCategory} />
-    </div>
+    <Container>
+      <CategoryMenu />
+      <ProductList />
+      <Cart />
+    </Container>
   );
 };
 

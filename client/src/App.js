@@ -8,13 +8,28 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+// use StoreProvider to wrap all components to become children of StoreProvider
+import { StoreProvider } from './utils/GlobalState';
+
 import Home from './pages/Home';
-import Detail from './pages/Detail';
-import NoMatch from './pages/NoMatch';
+import SingleProduct from './pages/SingleProduct';
+import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import OrderHistory from './pages/OrderHistory';
+import Success from './pages/Success';
+import Announcement from './components/Announcement';
+import Footer from './components/Footer';
+import HeroSlides from './components/HeroSlides';
+
+import VisualCategories from './components/VisualCategories';
+import NewsletterSignUp from './components/NewsletterSignUp';
+import Cart from './components/Cart';
+import styled from 'styled-components';
+// import ScrollToTop from './components/ScrollToTop';
+
+const Wrapper = styled.div``;
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,24 +50,37 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+const App = () => {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <Nav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/orderHistory" component={OrderHistory} />
-            <Route exact path="/products/:id" component={Detail} />
-            <Route component={NoMatch} />
-          </Switch>
-        </div>
+        {/* <ScrollToTop /> */}
+        <Wrapper>
+          <StoreProvider>
+            <Announcement />
+            <Nav>
+              <Cart />
+            </Nav>
+            <HeroSlides />
+            <VisualCategories />
+            <Wrapper>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/orderHistory' component={OrderHistory} />
+                <Route exact path='/products/:id' component={SingleProduct} />
+                <Route exact path='/success' component={Success} />
+                <Route component={ErrorPage} />
+              </Switch>
+            </Wrapper>
+            <NewsletterSignUp />
+            <Footer />
+          </StoreProvider>
+        </Wrapper>
       </Router>
     </ApolloProvider>
   );
-}
+};
 
 export default App;
